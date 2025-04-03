@@ -1,0 +1,40 @@
+.avanti-banner {
+  background: url(../assets/image-banner-avanti.png) center/cover no-repeat;
+  width: 100%;
+  height: 660px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.avanti-banner > div {
+  background-color: var(--blue);
+  padding: 3rem 0; 
+}
+
+.avanti-banner > div > p {
+  color: var(--white-color);
+  text-align: center; 
+
+  font: 400 1.875rem/140% var(--font-nunito);
+}
+
+@media (max-width: 480px) {
+
+  .avanti-banner{
+    background-size: cover;
+    background-clip: padding-box;
+    height: 30rem;
+
+    & > div{
+      padding: 3rem .5rem; 
+    }
+
+    & > div > p{
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}
