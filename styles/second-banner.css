@@ -59,7 +59,8 @@
 
 @media (max-width: 480px) {
   .second-banner > div{
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
     padding-inline: 1.5rem;
 
     & > div:first-child {

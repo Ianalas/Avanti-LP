@@ -206,24 +206,29 @@
 
   .releases{
     margin-block: 3rem;
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   
     & > div:nth-child(2){
       position: relative;
   
       display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
+      gap: .625rem;
+      grid-template-columns: 1fr 1fr;
       margin: 1rem auto;
+
+      & > figure{
+        display: none;
+      }
     }
   }
 
   .card{
-    padding-inline: 2rem;
-    
-  }
+    padding: .75rem .5rem;
 
-  .image{
-    margin-inline: auto;
+    & > .image{
+      margin: 0;
+      height: 158px;
+      width: 158px;
+    }
   }
 }

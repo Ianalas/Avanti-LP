@@ -13,7 +13,7 @@ function updateCarousel(cards, currentPage, cardsPerPage, previousBtn, nextBtn) 
 }
 
 function getCardsPerPage() {
-  return window.innerWidth <= 480 ? 1 : 5;
+  return window.innerWidth <= 480 ? 2 : 5;
 }
 
 cardsContainer.forEach((container) => {

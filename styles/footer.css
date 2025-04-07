@@ -43,9 +43,15 @@
         display: flex;
         gap: 6.875rem;
 
-        & h4{
+        transition: all 250ms linear;
+
+        & h4 {
           font: bold .875rem/1.75rem var(--font-nunito-sans);
           color: var(--black-color);
+          
+          & > button{
+            display: none;
+          }
         }
 
         & h5{
@@ -114,6 +120,7 @@
 }
 
 @media (max-width: 480px){
+
   .footer{
 
     & > main{
@@ -122,7 +129,8 @@
       & > div:first-child{
         display: flex;
         flex-direction: column;
-        padding: 2rem 3rem;
+
+        padding: 2rem 0;
 
         & > div{
           display: flex;
@@ -132,11 +140,40 @@
 
         & > div:nth-child(1){
           margin-bottom: 2rem;
+          align-items: center;
         }
 
         & > div:nth-child(2){
-          display: flex;
-          gap: 3rem;
+          display: grid;
+          grid-template-columns: 1;
+          gap: .5rem;
+          width: 100%;
+          border-top: 1px solid var(--grey-600-color);
+
+          & > div{
+            width: 100%;
+            padding: 1rem;
+            border-bottom: 1px solid var(--grey-600-color);
+
+            & > h4{
+              display: flex ;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            & > h4 > button{
+              display: flex;
+              border: none;
+              outline: none;
+              background-color: transparent;
+
+              color: var(--blue);
+            }
+
+            & > h5, > p{
+              display: none;
+            }
+          }
         }
       }
     }
@@ -174,16 +211,35 @@
 
   #payments{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(9,1fr); /* Colunas responsivas */
+    grid-template-rows: repeat(2,1fr); /* Linhas automáticas */
     width: fit-content;
+    gap: 0;
+    row-gap: 1.25rem;
     
     margin-inline: auto;
-    padding: 2rem 3rem;
-    justify-content: center;
-    gap: 1rem;
 
-    & svg{
+    & > svg{
       height: 20px;
-    }
+    } 
+
+    & > svg:nth-child(1) { grid-column: 1; grid-row: 1; }
+    & > svg:nth-child(2) { grid-column: 3; grid-row: 1; }
+    & > svg:nth-child(3) { grid-column: 5; grid-row: 1; }
+    & > svg:nth-child(4) { grid-column: 7; grid-row: 1; }
+    & > svg:nth-child(5) { grid-column: 9; grid-row: 1; }
+  
+    & > svg:nth-child(6) { grid-column: 2; grid-row: 2; }
+    & > svg:nth-child(7) { grid-column: 4; grid-row: 2; }
+    & > svg:nth-child(8) { grid-column: 6; grid-row: 2; }
+    & > svg:nth-child(9) { grid-column: 8; grid-row: 2; }
+  }
+
+  #services-footer > div h4 button {
+    transition: transform 0.3s ease;
+  }
+  
+  #services-footer div h4 button.active {
+    transform: rotate(-180deg);
   }
 }

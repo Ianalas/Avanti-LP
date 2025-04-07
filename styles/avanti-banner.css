@@ -24,17 +24,17 @@
 @media (max-width: 480px) {
 
   .avanti-banner{
-    background-size: cover;
-    background-clip: padding-box;
-    height: 30rem;
+    background: url(../assets/image-banner-avanti-mobile.png) center/cover no-repeat;
+    width: 100%;
+    height: 448px;
+
 
     & > div{
-      padding: 3rem .5rem; 
+      padding: 1.125rem .5rem; 
     }
 
     & > div > p{
       font-size: 1rem;
-      font-weight: bold;
     }
   }
 }

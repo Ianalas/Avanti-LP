@@ -150,7 +150,10 @@
     }
 
     & > div > div:nth-child(2){
-      padding: 2rem 2rem;
+      margin: 1rem 1rem;
+      padding: 2.5rem 1rem;
+
+      background-color: var(--grey-100-color);
 
       & > form{
         flex-direction: column;
@@ -161,7 +164,7 @@
         }
 
         & > button{
-          margin-top: 2rem;
+          margin-top: 0;
           width: 80%;
         }
       }

@@ -55,3 +55,44 @@ containers.forEach(container => {
     container.insertBefore(card, nextButton);
   }
 });
+
+/* Quando estiver em modo mobile, para o footer ser utilizavel */
+window.addEventListener("resize", footerMobile );
+
+function footerMobile(){
+  if(window.innerWidth <= 480){
+
+    const elementos = document.querySelectorAll("#services-footer > div");
+  
+    elementos.forEach( el => {
+      const btnIcon = el.querySelector("h4 > button");
+  
+      btnIcon.addEventListener("click", () =>{
+        btnIcon.classList.toggle("active");
+
+        const h5Array = el.querySelectorAll('h5');
+        const pArray = el.querySelectorAll('p');
+  
+        h5Array.forEach((h5) =>{
+          if (h5.style.display === 'block') {
+            h5.style.display = 'none';
+          } else {
+            h5.style.display = 'block';
+          }
+        })
+  
+        pArray.forEach((p) =>{
+          if (p.style.display === 'block') {
+            p.style.display = 'none';
+          } else {
+            p.style.display = 'block';
+          }
+        })
+      })
+    });
+  }
+}
+
+footerMobile();
+
+
