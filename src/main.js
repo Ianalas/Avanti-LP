@@ -23,39 +23,6 @@ displayDepartament.addEventListener("mouseleave", () => {
   displayDepartament.style.display = "none";
 });
 
-
-/* Criar os cards no realase*/
-const containers = document.querySelectorAll(".cards-container");
-
-containers.forEach(container => {
-  const nextButton = container.querySelector(".next"); 
-
-  for (let i = 0; i < 12; i++) {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    
-    card.innerHTML = `
-      <div class="image">
-        <span>NOVO</span>
-      </div>
-      <div>
-        <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-        <div>
-          <div>
-            <p>R$ 100,00</p>
-            <h4>R$ 79,90</h4>
-          </div>
-          <span>10% OFF</span>
-        </div>
-        <p>Ou em até <strong>10x de R$ 7,90</strong></p>
-      </div>
-      <button>Comprar</button>
-    `;
-
-    container.insertBefore(card, nextButton);
-  }
-});
-
 /* Quando estiver em modo mobile, para o footer ser utilizavel */
 window.addEventListener("resize", footerMobile );
 
@@ -96,3 +63,19 @@ function footerMobile(){
 footerMobile();
 
 
+
+document.querySelectorAll('.glide').forEach((glideElement) => {
+  new Glide(glideElement, {
+    type: 'carousel',
+    perView: 5,
+    gap: 16, // espaço entre os cards
+    breakpoints: {
+      768: {
+        perView: 3
+      },
+      480: {
+        perView: 2
+      }
+    }
+  }).mount();
+});

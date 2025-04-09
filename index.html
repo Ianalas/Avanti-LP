@@ -8,6 +8,9 @@
 
   <link rel="stylesheet" href="./styles/style.css">
 
+  <!-- CSS do Glide -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <title>AVANTI</title>
 </head>
@@ -158,7 +161,6 @@
       </section>
     </div>
   </nav>
-  
   <section class="sale">
     <div>
       <img src="./assets/image-chair.png" alt="">
@@ -180,28 +182,16 @@
       <h2>Lançamentos</h2>
       <p>Ver mais</p>
     </div>
-    <div class="cards-container">
-      <figure class="previous"><span class="iconify" data-icon="akar-icons:arrow-left"></figure>
-      <div  class="card">
-        <div class="image">
-          <span>NOVO</span>
-        </div>
-        <div>
-          <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-          <div>
-            <div>
-              <p>R$ 100,00</p>
-              <h4>R$ 79,90</h4>
-            </div>
-            <span>10% OFF</span>
-          </div>
-          <p>Ou em até <strong>10x de R$ 7,90</strong></p>
-        </div>
-        <button>Comprar</button>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+        </ul>
       </div>
-      <figure class="next">
-        <span class="iconify" data-icon="akar-icons:arrow-right">
-      </figure>
+      <!-- Controles -->
+      <div data-glide-el="controls">
+        <button class="previous" data-glide-dir="<"><span class="iconify" data-icon="lucide:arrow-up" ></span></button>
+        <button class="next" data-glide-dir=">"><span class="iconify" data-icon="lucide:arrow-up" ></span></button>
+      </div>
     </div>
     <div class="footer-realase">
       <b class="selected"></b>
@@ -260,28 +250,16 @@
       <h2>Lançamentos</h2>
       <p>Ver mais</p>
     </div>
-    <div class="cards-container">
-      <figure class="previous"><span class="iconify" data-icon="akar-icons:arrow-left"></figure>
-      <div  class="card">
-        <div class="image">
-          <span>NOVO</span>
-        </div>
-        <div>
-          <h3>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-          <div>
-            <div>
-              <p>R$ 100,00</p>
-              <h4>R$ 79,90</h4>
-            </div>
-            <span>10% OFF</span>
-          </div>
-          <p>Ou em até <strong>10x de R$ 7,90</strong></p>
-        </div>
-        <button>Comprar</button>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+        </ul>
       </div>
-      <figure class="next">
-        <span class="iconify" data-icon="akar-icons:arrow-right">
-      </figure>
+      <!-- Controles -->
+      <div data-glide-el="controls">
+        <button class="previous" data-glide-dir="<"><span class="iconify" data-icon="lucide:arrow-up" ></span></button>
+        <button class="next" data-glide-dir=">"><span class="iconify" data-icon="lucide:arrow-up" ></span></button>
+      </div>
     </div>
     <div class="footer-realase">
       <b class="selected"></b>
@@ -410,8 +388,10 @@
     <p>Você buscou por: 'assunto buscado'</p>
   </div>
 </body>
+  <!-- JS do Glide -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+  <script src="./src/create-realease.js"></script>
   <script src="./src/main.js"></script>
-  <script src="./src/realease.js"></script>
   <script src="./src/notification-search.js"></script>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 </html>

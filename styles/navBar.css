@@ -46,6 +46,10 @@ nav{
   max-width: 1280px;
   align-items: center;
 
+  & aside{
+    display: none;
+  }
+
   & > div:first-child{
     display: flex;
     justify-content: space-between;
@@ -420,6 +424,10 @@ nav{
     max-width: 1280px;
     width: 100%;
     align-items: center;
+
+    & aside{
+      display: block;
+    }
 
     & > div:first-child{
       display: grid;
