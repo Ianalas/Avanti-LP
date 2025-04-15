@@ -13,6 +13,10 @@ nav{
   }
 }
 
+.menu-mobile{
+  display: none;
+}
+
 .promo{
   background-color: var(--blue);
   display: flex;
@@ -46,7 +50,7 @@ nav{
   max-width: 1280px;
   align-items: center;
 
-  & aside{
+  & > div > button{
     display: none;
   }
 
@@ -416,6 +420,86 @@ nav{
     }
   }
 
+  .menu-mobile{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    position: fixed;
+    inset: 0;
+    background-color: var(--grey-100-color);
+    width: 70%;
+    padding: 1.5rem;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: .5rem;
+      
+      & > img{
+        height: 2rem;
+      }
+
+      & > button {
+        background-color: transparent;
+        outline: none;
+        border: none;
+
+        & > svg{
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+
+    & > h1{
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+      font-family: var(--font-nunito-sans);
+    }
+
+    & > section{
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      padding: .25rem;
+      border-radius: 4px;
+
+      transition: all 250ms linear;
+
+      & > h4{
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 1rem;
+      }
+
+      & > div{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        & > p{
+          font-family: var(--font-nunito);
+          font-weight: 600;
+          color: var(--gray-dark-700);
+        }
+      }
+    }
+  }
+
+  .menu-mobile section div {
+    display: none;
+  }
+  
+  .menu-mobile section div.active {
+    display: flex;;
+  }
+
+  .menu-mobile section:has(div.active){
+    background-color: var(--grey-400-color);
+  }
+
   .leading{
     display: grid;
     gap: 1.5rem;
@@ -425,8 +509,11 @@ nav{
     width: 100%;
     align-items: center;
 
-    & aside{
+    & > div:first-child > button{
       display: block;
+      outline: none;
+      border: none;
+      background-color: transparent;
     }
 
     & > div:first-child{
@@ -445,7 +532,7 @@ nav{
         height: 28px;
       }
 
-      & > aside{
+      & > button{
         width: 1.5rem;
         height: 1.5rem;
         & > svg{

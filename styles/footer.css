@@ -1,5 +1,4 @@
 .footer{
-
   & > main{
     width: 100%;
     background-color: var(--grey-100-color);
@@ -239,7 +238,7 @@
     transition: transform 0.3s ease;
   }
   
-  #services-footer div h4 button.active {
+  #services-footer div h4.active button {
     transform: rotate(-180deg);
   }
 }

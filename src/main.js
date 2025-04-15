@@ -32,7 +32,7 @@ function footerMobile(){
     const elementos = document.querySelectorAll("#services-footer > div");
   
     elementos.forEach( el => {
-      const btnIcon = el.querySelector("h4 > button");
+      const btnIcon = el.querySelector("h4");
   
       btnIcon.addEventListener("click", () =>{
         btnIcon.classList.toggle("active");
