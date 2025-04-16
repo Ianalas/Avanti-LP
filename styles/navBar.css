@@ -465,6 +465,7 @@ nav{
       font-family: var(--font-nunito-sans);
       padding-block: .5rem;
       border-bottom: 1px solid var(--grey-900-color);
+      color: var(--gray-dark-700);
     }
 
     & > section{
@@ -483,6 +484,11 @@ nav{
         justify-content: space-between;
         font-size: 1rem;
         padding: .5rem;
+        color: var(--gray-dark-700);
+
+        &.blue-text{
+          color: var(--blue);
+        }
 
         &.blue-text svg{
           transform: rotate(180deg);

@@ -25,41 +25,52 @@ displayDepartament.addEventListener("mouseleave", () => {
 
 /* Quando estiver em modo mobile, para o footer ser utilizavel */
 
-function footerMobile(){
-  if(window.innerWidth <= 480){
-    const elementos = document.querySelectorAll("#services-footer > div");
+function footerMobile() {
+  const elementos = document.querySelectorAll("#services-footer > div");
 
+  if (window.innerWidth > 480) {
     elementos.forEach(el => {
+      const h5Array = el.querySelectorAll("h5");
+      const pArray = el.querySelectorAll("p");
+
+      h5Array.forEach(h5 => h5.style.display = "block");
+      pArray.forEach(p => p.style.display = "block");
+
+      const btnIcon = el.querySelector("h4");
+      btnIcon.classList.remove("active", "listener-added");
+    });
+  } else {
+    elementos.forEach(el => { // Esconde todos por padrão ao entrar no mobile
+      const h5Array = el.querySelectorAll("h5");
+      const pArray = el.querySelectorAll("p");
+
+      
+      h5Array.forEach(h5 => h5.style.display = "none");
+      pArray.forEach(p => p.style.display = "none");
+
       const btnIcon = el.querySelector("h4");
 
-      // Verifica se já tem listener
       if (!btnIcon.classList.contains("listener-added")) {
         btnIcon.classList.add("listener-added");
 
         btnIcon.addEventListener("click", () => {
           btnIcon.classList.toggle("active");
-          console.log(btnIcon);
 
-          const h5Array = el.querySelectorAll('h5');
-          const pArray = el.querySelectorAll('p');
-
-          h5Array.forEach((h5) => {
-            h5.style.display = (h5.style.display === 'block') ? 'none' : 'block';
+          h5Array.forEach(h5 => {
+            h5.style.display = (h5.style.display === "block") ? "none" : "block";
           });
 
-          pArray.forEach((p) => {
-            p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+          pArray.forEach(p => {
+            p.style.display = (p.style.display === "block") ? "none" : "block";
           });
         });
       }
     });
   }
 }
+window.addEventListener("DOMContentLoaded", footerMobile);
+window.addEventListener("resize", footerMobile);
 
-document.addEventListener("DOMContentLoaded", () => {
-  footerMobile();
-});
-window.addEventListener("resize", footerMobile );
 
 document.querySelectorAll('.glide').forEach((glideElement) => {
   new Glide(glideElement, {
@@ -75,4 +86,14 @@ document.querySelectorAll('.glide').forEach((glideElement) => {
       }
     }
   }).mount();
+});
+
+// Toda vez que for redimensionado será reloada a página para não ocorrer bugs no JS.
+let resizeTimeout; 
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+
+  resizeTimeout = setTimeout(() => {
+    location.reload();
+  }, 300); 
 });
