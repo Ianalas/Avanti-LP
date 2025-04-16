@@ -2,6 +2,8 @@
 
 Este repositório contém o código-fonte da Landing Page da **Avanti**, desenvolvida com foco em apresentar os serviços de forma moderna, elegante e responsiva.
 
+# 🔗 [Clique para ir até a Landing Page](https://avanti-lp.vercel.app)
+
 ## 🚀 Tecnologias Utilizadas
 
 - **HTML5** — Estruturação da página
@@ -15,11 +17,6 @@ A **Avanti-LP** é uma Landing Page institucional com objetivo de divulgar os se
 
 A página é totalmente responsiva, se adaptando bem a diferentes dispositivos, e conta com um carrossel interativo para destacar informações visuais importantes, implementado com Glide.js.
 
-## 🌐 Deploy
-
-A página está hospedada e pode ser visualizada através do seguinte link:
-
-🔗 [Vá para a Landing Page](https://avanti-lp.vercel.app)
 
 ---
 
