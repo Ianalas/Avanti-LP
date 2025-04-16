@@ -52,6 +52,7 @@ nav{
 
   & > div:first-child > button{
     display: none;
+    
   }
 
   & > div:first-child{
@@ -60,6 +61,7 @@ nav{
 
     & > img{
       height: 28px;
+      margin-block: auto;
     }
   }
 
@@ -268,7 +270,7 @@ nav{
       }
     }
 
-    & > div:nth-child(2){
+    & > .card-promotion{
       max-width: 14.75rem;
       display: grid;
       align-items: center;
@@ -358,7 +360,7 @@ nav{
     }
   }
 
-  & > div{
+  & > .card-promotion{
     max-width: 14.75rem;
     display: grid;
     align-items: center;
@@ -424,11 +426,16 @@ nav{
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    position: fixed;
-    inset: 0;
     background-color: var(--grey-100-color);
     width: 70%;
+    max-width: 300px;
     padding: 1.5rem;
+
+    position: fixed;
+    inset: 0;
+    transform: translateX(-100%);
+    transition: transform 500ms ease-in-out;
+    z-index: 999;
 
     & > div {
       display: flex;
@@ -476,12 +483,18 @@ nav{
         justify-content: space-between;
         font-size: 1rem;
         padding: .5rem;
+
+        &.blue-text svg{
+          transform: rotate(180deg);
+          transition: transform 250ms allow-discrete;
+        }
       }
 
       & > div{
         display: flex;
         flex-direction: column;
         gap: .5rem;
+        padding: 0 .5rem .5rem .5rem;
 
         & > p{
           font-family: var(--font-nunito);
@@ -490,6 +503,43 @@ nav{
         }
       }
     }
+
+    & > .card-promotion{
+      margin-top: 3rem;
+      max-width: 14.75rem;
+      display: grid;
+      align-items: center;
+      border-radius: 10px;
+      padding: 1.5rem;
+
+      background: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), 
+        url(../assets/image-cup-environment.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+
+      & > h4{
+        color: var(--white-color);
+        font: 400 1.5rem/1.75rem var(--font-nunito-sans);
+      }
+      
+      & > button{
+        width: fit-content;
+        background: transparent;
+        border: 1px solid var(--white-color);
+        color: var(--white-color);
+        border-radius: 8px;
+        padding: .75rem 1.5rem;
+
+        font: bold .75rem var(--font-nunito-sans);
+      }
+    }
+  }
+
+  .menu-mobile.ativo{
+    transform: translateX(0);
   }
 
   .menu-mobile section div {

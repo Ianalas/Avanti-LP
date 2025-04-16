@@ -1,19 +1,16 @@
 const openBtnMenu = document.querySelector(".leading > div > button");
 const closeBtnMenu = document.querySelector(".menu-mobile > div > button");
+const container = document.querySelector(".menu-mobile");
+const cardPromotion = document.querySelector(".menu-mobile .card-promotion");
 
 openBtnMenu.addEventListener("click", () =>{
-  if (container.style.display === 'flex') {
-    container.style.display = 'none';
-  } else {
-    container.style.display = 'flex';
-  }
+  container.classList.add("ativo");
 });
 
 closeBtnMenu.addEventListener("click", () =>{
-  container.style.display = 'none';
+  container.classList.remove("ativo");
 });
 
-const container = document.querySelector(".menu-mobile");
 
 for (let i = 0; i < 6; i++) {
   const section = document.createElement("section");
@@ -32,7 +29,7 @@ for (let i = 0; i < 6; i++) {
     </div>
   `;
 
-  container.appendChild(section);
+  container.insertBefore(section, cardPromotion);
 }
 
 const titles = document.querySelectorAll(".menu-mobile h4");
@@ -40,10 +37,10 @@ let activeTitle;
 
 titles.forEach((title) => {
   title.addEventListener("click", () => {
+    
     const contentDiv = title.nextElementSibling;
     const isActive = contentDiv.classList.toggle("active");
 
-    
     if (activeTitle && activeTitle !== title) { // Se estava outro aberto, remove a cor
       activeTitle.classList.remove("blue-text");
       activeTitle.nextElementSibling.classList.remove("active"); // Para fechar o div anterior aberto
@@ -57,6 +54,12 @@ titles.forEach((title) => {
       title.classList.remove("blue-text");
       activeTitle = null;
     }
+    console.log(title);
   });
 });
 
+window.addEventListener("resize", () => {
+  if(window.innerWidth > 480){
+    container.style.display = 'none';
+  }
+});

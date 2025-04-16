@@ -24,45 +24,42 @@ displayDepartament.addEventListener("mouseleave", () => {
 });
 
 /* Quando estiver em modo mobile, para o footer ser utilizavel */
-window.addEventListener("resize", footerMobile );
 
 function footerMobile(){
   if(window.innerWidth <= 480){
-
     const elementos = document.querySelectorAll("#services-footer > div");
-  
-    elementos.forEach( el => {
-      const btnIcon = el.querySelector("h4");
-  
-      btnIcon.addEventListener("click", () =>{
-        btnIcon.classList.toggle("active");
 
-        const h5Array = el.querySelectorAll('h5');
-        const pArray = el.querySelectorAll('p');
-  
-        h5Array.forEach((h5) =>{
-          if (h5.style.display === 'block') {
-            h5.style.display = 'none';
-          } else {
-            h5.style.display = 'block';
-          }
-        })
-  
-        pArray.forEach((p) =>{
-          if (p.style.display === 'block') {
-            p.style.display = 'none';
-          } else {
-            p.style.display = 'block';
-          }
-        })
-      })
+    elementos.forEach(el => {
+      const btnIcon = el.querySelector("h4");
+
+      // Verifica se já tem listener
+      if (!btnIcon.classList.contains("listener-added")) {
+        btnIcon.classList.add("listener-added");
+
+        btnIcon.addEventListener("click", () => {
+          btnIcon.classList.toggle("active");
+          console.log(btnIcon);
+
+          const h5Array = el.querySelectorAll('h5');
+          const pArray = el.querySelectorAll('p');
+
+          h5Array.forEach((h5) => {
+            h5.style.display = (h5.style.display === 'block') ? 'none' : 'block';
+          });
+
+          pArray.forEach((p) => {
+            p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+          });
+        });
+      }
     });
   }
 }
 
-footerMobile();
-
-
+document.addEventListener("DOMContentLoaded", () => {
+  footerMobile();
+});
+window.addEventListener("resize", footerMobile );
 
 document.querySelectorAll('.glide').forEach((glideElement) => {
   new Glide(glideElement, {

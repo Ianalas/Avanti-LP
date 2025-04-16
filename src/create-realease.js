@@ -1,9 +1,7 @@
 /* Criar os cards no realase*/
 const containers = document.querySelectorAll(".glide__slides");
-console.log(containers);
 
 containers.forEach(container => {
-  console.log();
 
   for (let i = 0; i < 6; i++) {
 
